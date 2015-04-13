@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:id="@+id/dialogPlaList"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:outlineProvider="bounds"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        android:background="#e74c3c" >
+
+        <!-- Song Title -->
+        <TextView
+            android:id="@+id/songTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:paddingLeft="10dp"
+
+            android:text="Play List"
+            android:layout_marginTop="10dp"/>"
+        </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:divider="#ffffff"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector"
+        />
+
+</LinearLayout>

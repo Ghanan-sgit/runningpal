@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_menu_tack_pic"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="@string/action_menu"
+        android:icon="@drawable/camera_muenu_icon"
+
+        />
+
+    <item
+        android:id="@+id/action_music"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="@string/action_music"
+        android:icon="@drawable/music_menu_icon"
+
+        />
+    <item
+        android:id="@+id/action_menu_home"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="@string/action_menu"
+        android:icon="@drawable/menu_icon"
+
+        />
+
+</menu>

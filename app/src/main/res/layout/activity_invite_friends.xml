@@ -1,0 +1,150 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp"
+    tools:context="com.example.sachith.newrunningpal4.InviteFriends"
+    android:orientation="vertical"
+    android:background="#ffffffff">
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView2" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:id="@+id/player_header_bg"
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:background="#e74c3c"
+                android:layout_alignParentTop="true"
+
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_weight="1">
+
+
+                <TextView
+                    android:id="@+id/songTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"
+                    android:text="Invite Friends to follow jogging route"
+
+                    android:layout_marginTop="10dp"/>"
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:id="@+id/txtComment123"
+                    android:layout_weight="1"
+                    android:hint="Comment" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:orientation="vertical"
+                android:background="#e74c3c"
+                android:id="@+id/linearLayout"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:id="@+id/imageView"
+                        android:outlineProvider="paddedBounds"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:text="Select Map To Share"
+                    android:id="@+id/btnSelectMApToShare"
+                    android:textSize="25dp"
+                    android:textColor="#ffffffff"
+                    android:background="#e74c3c"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/btnFbShareInFrist"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_share_on_fb" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/btngmailShareInFrist"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_share_on_gmail" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/btnTwitterShareInFrist"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_share_on_twitter" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+
+

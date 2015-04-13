@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">RunningPal</string>
+
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_music"></string>
+    <string name="action_menu"></string>
+    <string name="title_activity_splash_screen">splashScreen</string>
+    <string name="favorites">Favorites</string>
+    <string name="change_city">Change city</string>
+
+    <!-- Put your own APP ID here -->
+    <string name="open_weather_maps_app_id">1111111111</string>
+
+    <string name="weather_sunny">&#xf00d;</string>
+    <string name="weather_clear_night">&#xf02e;</string>
+
+    <string name="weather_foggy">&#xf014;</string>
+    <string name="weather_cloudy">&#xf013;</string>
+    <string name="weather_rainy">&#xf019;</string>
+    <string name="weather_snowy">&#xf01b;</string>
+    <string name="weather_thunder">&#xf01e;</string>
+    <string name="weather_drizzle">&#xf01c;</string>
+    <string name="place_not_found">Sorry, no weather data found.</string>
+    <string name="title_activity_sample">sampleActivity</string>
+    <string name="title_activity_invite_friend">InviteFriendActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+    <string name="title_activity_invite_friends">InviteFriends</string>
+    <string name="title_activity_track_recorder">RunningPal</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_map_acivity_new">Map</string>
+    <string name="title_activity_splashscreen">Splashscreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_spalsh_screen">spalshScreen</string>
+    <string name="title_activity_invite_friend_new">invite_friend_new</string>
+    <string name="title_activity_invite_friends2">InviteFriends2</string>
+</resources>
