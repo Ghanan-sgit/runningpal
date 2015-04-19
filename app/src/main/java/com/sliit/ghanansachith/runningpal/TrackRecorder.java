@@ -46,6 +46,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -200,7 +201,7 @@ public class TrackRecorder extends FragmentActivity implements MediaPlayer.OnCom
                     double timeElapsed = ((SystemClock.elapsedRealtime()-chronometer.getBase())/3600000.0);
                     Toast.makeText(getApplicationContext(),Double.toString(timeElapsed),Toast.LENGTH_SHORT).show();
                     speed=distInKm/timeElapsed;
-                    txtSpeed.setText(String.format("%.2f", speed)+" km/h");
+                    txtSpeed.setText(String.format("%.2f", speed));
                 }
 
             }
@@ -1105,6 +1106,14 @@ public class TrackRecorder extends FragmentActivity implements MediaPlayer.OnCom
 
 //                LatLng lastLoc = getLocation();
                 LatLng lastLoc = listLatLng.get(arrayLoc-1);
+
+                //zoom between start and ending points
+                LatLngBounds.Builder builder = new LatLngBounds.Builder();
+                builder.include(listLatLng.get(0));
+                builder.include(lastLoc);
+                LatLngBounds bounds = builder.build();
+
+                mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 20));
                 mMap.addMarker(new MarkerOptions().position(lastLoc).title("Ending Point").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 
                 //stop receiving updates
@@ -1132,7 +1141,7 @@ public class TrackRecorder extends FragmentActivity implements MediaPlayer.OnCom
                 int minutes = (int) (timeSpent - hours * 3600000) / 60000;
                 int seconds = (int) (timeSpent - hours * 3600000 - minutes * 60000) / 1000;
 
-                String timeElapsed = hours + ":" + minutes + ":" + seconds;
+                String timeElapsed = String.format("%02d", hours) + ":" + String.format("%02d", minutes) + ":" + String.format("%02d", seconds);
 
                 SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 String today = sdf2.format(new Date());

@@ -1,9 +1,6 @@
 package com.sliit.ghanansachith.runningpal;
 
-import android.app.ActionBar;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.ListActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,39 +8,30 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.hardware.Camera;
-import android.location.LocationManager;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
-import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
-import android.text.InputType;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.SimpleAdapter;
@@ -58,7 +46,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Vector;
 
@@ -242,6 +229,13 @@ public class MainActivity extends ActionBarActivity implements MediaPlayer.OnCom
         TextView dist = (TextView) findViewById(R.id.textDist);/////////////////////////////////////////////////
        TrackDBHandler tdb = new TrackDBHandler(getApplicationContext());
         dist.setText(tdb.calculateTotalDistance());
+
+        TextView speed = (TextView) findViewById(R.id.textSpeed);
+        speed.setText(tdb.calculateAverageSpeed());
+
+
+        TextView time = (TextView) findViewById(R.id.textTime);
+        time.setText(tdb.calculateTotalTime());
 
       //  TrackDBHandler dbtr = new TrackDBHandler(getApplicationContext());
       //  List<Track> tr1 = dbtr.getAllTracks();

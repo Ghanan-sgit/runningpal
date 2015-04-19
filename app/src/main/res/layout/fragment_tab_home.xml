@@ -43,7 +43,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="0000"
-                        android:id="@+id/textView18"
+                        android:id="@+id/textSpeed"
                         android:layout_gravity="center_horizontal"
                         android:textSize="38dp"
                         android:textColor="#ffffffff" />
@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="00:00:00"
-                    android:id="@+id/textView"
+                    android:id="@+id/textTime"
                     android:layout_gravity="center_horizontal"
                     android:textSize="45dp"
                     android:textColor="#ffffffff" />

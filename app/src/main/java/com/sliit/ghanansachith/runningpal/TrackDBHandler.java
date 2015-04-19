@@ -15,8 +15,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 /**
  * Created by pranavaghanan on 3/29/15.
@@ -166,8 +169,69 @@ public class TrackDBHandler extends SQLiteOpenHelper {
             db.close();
         }
 
-    return totDis;
-}
+        return totDis;
+    }
+
+    public String calculateAverageSpeed() {
+        String totSpeed = null;
+
+        try {
+
+            String selectQuery = "SELECT  AVG(speed) FROM " + TABLE_TRACKS;
+
+            db = this.getReadableDatabase();
+            Cursor c = db.rawQuery(selectQuery, null);
+
+            if (c != null)
+                c.moveToFirst();
+
+            DecimalFormat df = new DecimalFormat("#.00");
+
+            double speedInDouble = c.getDouble(0);
+
+            totSpeed = df.format(speedInDouble) + " kmph";
+
+        } catch (Exception e) {
+        }finally {
+            db.close();
+        }
+
+        return totSpeed;
+    }
+
+    public String calculateTotalTime() {
+        String totTime = null;
+
+        try {
+
+            String selectQuery = "SELECT time FROM " + TABLE_TRACKS;
+
+            db = this.getReadableDatabase();
+            Cursor c = db.rawQuery(selectQuery, null);
+
+            if (c.moveToFirst()) {
+
+                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+                sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+                long sumOfTime = 0;
+
+                do {
+                    Date tempDate = sdf.parse(c.getString(0));
+                    Log.d("current time", c.getString(0));
+                    sumOfTime += tempDate.getTime();
+                } while (c.moveToNext());
+
+                totTime = sdf.format(new Date(sumOfTime));
+            }
+
+
+        } catch (Exception e) {
+        }finally {
+            db.close();
+        }
+
+        return totTime;
+    }
 
 
     public static String storeImage(Bitmap imageData, String filename) {
